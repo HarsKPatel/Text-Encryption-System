@@ -1,0 +1,46 @@
+Name: Harsh Krujibhai Patel
+
+01:
+Issue: The system currently only supports a Substitution Cipher and if we want to insert a new kind of Cipher,
+we will have to repeat a huge amount of code which is not a good coding practice.
+
+Solution: I have made a new parent abstract class which will provide a skeleton for any kind of Cipher.
+Then I inherited it in Substitution Cipher. Further, I also made new Interface ICipher and ISubstitutionCipher
+which will provide a design for anyone who wants to implement this classes.
+
+Implemented: Yes, all test cases also passes
+
+02:
+Issue: The system currently only supports a key for Substitution Cipher and if we want to insert a new kind of
+key for a new Cipher, we will encounter same problem as the above point.
+
+Solution: I have made an Interface of general Encryption Key and ISubstitutionKey which will act as a guide for
+future developers on how new kind Encryption Key can be added to the code. Now a new developer can make a new
+Interface for the new key, extend the IEncryptionKey in it and implement it in a new concrete class and
+they should be good to go.
+
+Implemented: Yes, all test cases also passes
+
+03:
+Issue: The system currently depends upon a lot of Concrete classes. This is a bad practice because if we decide to
+change the design and think of deciding to delete a concrete, we will have to change a lot of things.
+
+Solution: I made Interfaces for almost all the classes and then made the classes depend on those interfaces which
+is a more futuristic approach and also support DIP.
+
+Implemented: Yes, all test cases passes.
+
+04:
+Issue: A lot of functions returns concrete classes and also has concrete member variables in them. This violates
+DIP. This kind of methods will become obsolete when we try to use them with new kind of Ciphers and Keys.
+
+Solution: I made methods return Interfaces and also made data type of their member variables Interfaces.
+This will help us a lot when we expand our system in the future. Also is supports current requirements.
+
+Implemented: Yes, all test cases passes.
+
+
+-------------------------------
+
+All the new functionalities are implemented.
+Further, all the new functionalities are tested by unit testing and system testing and passes all the tests
